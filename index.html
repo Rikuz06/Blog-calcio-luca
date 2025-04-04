@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IL calcio secondo Luca</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('serie-a')">Serie A</a></li>
+            <li><a href="#" onclick="showSection('champions')">Champions League</a></li>
+            <li><a href="#" onclick="showSection('premier')">Premier League</a></li>
+            <li><a href="#" onclick="showSection('chi-e-luca')">Chi è Luca?</a></li>
+            <li><a href="#" onclick="showSection('admin')">Admin</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-content">
+            <div class="logo">IL calcio secondo Luca</div>
+            <p class="header-subtitle">Notizie analisi e commenti sul calcio</p>
+        </div>
+    </header>
+
+    <!-- Sezione per aggiungere post (Admin) -->
+    <section id="admin" class="hidden">
+        <h2>Area Admin</h2>
+        <div id="password-prompt">
+            <input type="password" id="admin-password" placeholder="Password">
+            <button onclick="checkPassword()">Accedi</button>
+            <p id="password-message" class="error-message"></p>
+        </div>
+        <div id="add-post" class="hidden">
+            <h2>Aggiungi un nuovo post</h2>
+            <form id="post-form">
+                <input type="text" id="post-title" placeholder="Titolo del post" required>
+                <textarea id="post-content" placeholder="Contenuto del post" required></textarea>
+                <select id="post-category">
+                    <option value="serie-a">Serie A</option>
+                    <option value="champions">Champions League</option>
+                    <option value="premier">Premier League</option>
+                    <option value="chi-e-luca">Chi è Luca?</option>
+                </select>
+                <input type="file" id="post-image" accept="image/*">
+                <button type="submit">Pubblica</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sezioni per le varie categorie -->
+    <main>
+        <section id="home">
+            <h2>Ultimi articoli</h2>
+            <div id="posts"></div>
+        </section>
+
+        <section id="serie-a" class="hidden">
+            <h2>Serie A</h2>
+            <div id="serie-a-posts"></div>
+        </section>
+
+        <section id="champions" class="hidden">
+            <h2>Champions League</h2>
+            <div id="champions-posts"></div>
+        </section>
+
+        <section id="premier" class="hidden">
+            <h2>Premier League</h2>
+            <div id="premier-posts"></div>
+        </section>
+
+        <section id="chi-e-luca" class="hidden">
+            <h2>Chi è Luca?</h2>
+            <p>Luca è un appassionato di calcio e fondatore di questo blog.</p>
+            <div id="chi-e-luca-posts"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IL calcio secondo Luca - Tutti i diritti riservati</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
